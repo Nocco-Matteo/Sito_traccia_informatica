@@ -1,0 +1,14 @@
+
+  /**
+  accesso
+  studente: visualizzazione propria situazione (proprie assenze e proprie presenze)
+  dipendente - ruolo: visualizzare (proprie lezioni inserite con visualizzazione di assenti e presenti + copresente se cè)
+                      inserire (nuova lezione + presenze e assenze)
+                      modificare(lezioni già inserite)
+  dipendente - co-pres: visulizzare (lezioni a cui ha partecipato)
+                        visulizzare (lezioni esistenti con filtro iniziale data corrente importante visualizzare solo quelle in cui NON ha gia partecipato)
+						inserire (partepazione a lezione esistente)
+						eliminazione (di una partecipazione errata con conferma via mail)
+  */
+  
+  
