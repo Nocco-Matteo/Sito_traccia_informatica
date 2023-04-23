@@ -141,13 +141,11 @@ DROP TABLE IF EXISTS `insegnamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `insegnamento` (
-  `fk_dipendente` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_materia` int(11) DEFAULT NULL,
-  KEY `fk_dipendente` (`fk_dipendente`),
-  KEY `insegnamento_FK` (`fk_materia`),
-  CONSTRAINT `insegnamento_FK` FOREIGN KEY (`fk_materia`) REFERENCES `materia` (`id`),
-  CONSTRAINT `insegnamento_ibfk_1` FOREIGN KEY (`fk_dipendente`) REFERENCES `dipendente` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `fk_dipendente` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +154,7 @@ CREATE TABLE `insegnamento` (
 
 LOCK TABLES `insegnamento` WRITE;
 /*!40000 ALTER TABLE `insegnamento` DISABLE KEYS */;
-INSERT INTO `insegnamento` VALUES (1,1),(2,1),(4,4),(2,1),(5,9);
+INSERT INTO `insegnamento` VALUES (1,1,1),(2,1,2),(3,4,4),(4,1,2),(5,9,5);
 /*!40000 ALTER TABLE `insegnamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,13 +195,11 @@ DROP TABLE IF EXISTS `lezione`;
 CREATE TABLE `lezione` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data_ora_lezione` datetime DEFAULT NULL,
-  `fk_dipendente` int(11) DEFAULT NULL,
   `fk_classe` int(11) DEFAULT NULL,
+  `argomento` text DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_dipendente` (`fk_dipendente`),
   KEY `lezione_FK` (`fk_classe`),
-  CONSTRAINT `lezione_FK` FOREIGN KEY (`fk_classe`) REFERENCES `classe` (`id`),
-  CONSTRAINT `lezione_ibfk_1` FOREIGN KEY (`fk_dipendente`) REFERENCES `dipendente` (`id`)
+  CONSTRAINT `lezione_FK` FOREIGN KEY (`fk_classe`) REFERENCES `classe` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -213,7 +209,7 @@ CREATE TABLE `lezione` (
 
 LOCK TABLES `lezione` WRITE;
 /*!40000 ALTER TABLE `lezione` DISABLE KEYS */;
-INSERT INTO `lezione` VALUES (1,'2022-01-01 19:00:00',1,1),(2,'2022-01-02 20:00:00',2,1),(3,'2022-01-03 21:00:00',1,2),(4,'2022-01-04 22:00:00',2,3),(5,'2022-01-05 13:00:00',1,3),(6,'2022-01-06 14:00:00',1,1),(7,'2022-01-07 15:00:00',2,2),(8,'2022-01-08 16:00:00',1,2),(9,'2022-01-09 17:00:00',2,3),(10,'2022-01-10 18:00:00',2,1);
+INSERT INTO `lezione` VALUES (1,'2022-01-01 19:00:00',1,NULL),(2,'2022-01-02 20:00:00',1,NULL),(3,'2022-01-03 21:00:00',2,NULL),(4,'2022-01-04 22:00:00',3,NULL),(5,'2022-01-05 13:00:00',3,NULL),(6,'2022-01-06 14:00:00',1,NULL),(7,'2022-01-07 15:00:00',2,NULL),(8,'2022-01-08 16:00:00',2,NULL),(9,'2022-01-09 17:00:00',3,NULL),(10,'2022-01-10 18:00:00',1,NULL);
 /*!40000 ALTER TABLE `lezione` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -311,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-23 17:47:09
+-- Dump completed on 2023-04-23 18:52:00
