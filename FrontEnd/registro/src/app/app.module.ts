@@ -8,10 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './components/home/home.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { LoginModule } from './components/login/login.module';
-import { DocenteComponent } from './components/docente/docente.component';
-import { StudenteComponent } from './components/studente/studente.component';
 import { StudenteModule } from './components/studente/studente.module';
 import { DocenteModule } from './components/docente/docente.module';
+import { FiltriModule } from './components/filtri/filtri.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { DocenteModule } from './components/docente/docente.module';
     NavbarModule,
     LoginModule,
     StudenteModule,
-    DocenteModule
+    DocenteModule,
+    FiltriModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,26 +9,9 @@ import { StudenteComponent } from '../studente/studente.component';
 
 //TODO problema con rotta non esistente
 const mainRoutes: Routes = [
-  
-  {
-      path: '',
-      component: HomeComponent,
-      children:[
-        {
-          path:'login',
-          loadChildren: ()=> import('../login/login.module').then(m =>m.LoginModule)
-        },
-        {
-          path:'studente/dashboard',
-          loadChildren: ()=> import('../studente/studente.module').then(m =>m.StudenteModule)
-        },
-        {
-          path: 'docente/dashboard',
-          loadChildren: ()=> import('../docente/docente.module').then(m =>m.DocenteModule)
-        }
-      ]
-    },
-   
+
+
+
 ]
 
 
