@@ -8,10 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './components/home/home.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { LoginModule } from './components/login/login.module';
+import { DocenteComponent } from './components/docente/docente.component';
+import { StudenteComponent } from './components/studente/studente.component';
+import { StudenteModule } from './components/studente/studente.module';
+import { DocenteModule } from './components/docente/docente.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,9 @@ import { LoginModule } from './components/login/login.module';
     BrowserAnimationsModule,
     HomeModule,
     NavbarModule,
-    LoginModule
+    LoginModule,
+    StudenteModule,
+    DocenteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

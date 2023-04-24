@@ -1,6 +1,14 @@
-@import '../../shared/colori.scss';
+@import "../../shared/colori.scss";
 
-.corpo
-{
+.background {
   background-color: $primary-color;
+  
+  .corpo {
+    padding-top: 100px;
+    height: 100vh;
+  }
+}
+
+::ng-deep *{
+  color: $text-color;
 }
