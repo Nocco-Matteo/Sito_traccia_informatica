@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StudenteComponent } from './studente.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FiltriModule } from "../filtri/filtri.module";
+import { MatCardModule } from '@angular/material/card';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const mainRoutes: Routes = [
   {
@@ -17,7 +19,9 @@ const mainRoutes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(mainRoutes),
-        FiltriModule
+        FiltriModule,
+        MatCardModule,
+        NgbModule
     ]
 })
 export class StudenteModule { }

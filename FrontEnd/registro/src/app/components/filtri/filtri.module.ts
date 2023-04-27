@@ -6,6 +6,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FiltriComponent } from './filtri.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -19,7 +20,8 @@ import { FiltriComponent } from './filtri.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   exports: [
     FiltriComponent

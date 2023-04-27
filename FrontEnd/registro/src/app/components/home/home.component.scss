@@ -9,6 +9,7 @@
   }
 }
 
-// ::ng-deep *{
-//   color: $text-color;
-// }
+::ng-deep *{
+  //color: $text-color;
+  font: $font;
+}

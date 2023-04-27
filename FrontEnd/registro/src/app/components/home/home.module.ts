@@ -7,7 +7,7 @@ import { LoginComponent } from '../login/login.component';
 import { StudenteModule } from '../studente/studente.module';
 import { StudenteComponent } from '../studente/studente.component';
 
-//TODO problema con rotta non esistente
+
 const mainRoutes: Routes = [
 
 

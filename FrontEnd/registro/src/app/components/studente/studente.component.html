@@ -1,26 +1,61 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-2 d-flex justify-content-between">
-      <div>
-        <h1>immagine</h1>
-      </div>
-      <div>
-        <h1>Benvenuto</h1>
-      </div>
+  <header class="row px-3 header">
+    <div class="col-2 header__col">
+      <mat-card class="h-100 m-0">
+        <mat-card-content>
+          <div class="h-100 d-flex justify-content-between">
+            <div class="header__image">
+              <h1>immagine</h1>
+            </div>
+            <div class="header__welcome">
+              <h1>Benvenuto</h1>
+            </div>
+          </div>
+
+        </mat-card-content>
+      </mat-card>
     </div>
 
     <div class="col-1"></div>
-    <div class="col-2">
-      <p>Ore lezioni totali:</p>
-      <p>Ore assenze totali:</p>
+    <div class="col-2 header__col">
+      <mat-card class="h-100">
+        <mat-card-content>
+          <p>Ore lezioni totali:</p>
+          <p>Ore assenze totali:</p>
+        </mat-card-content>
+      </mat-card>
     </div>
 
     <div class="col-1"></div>
-    <div class="col">
+    <div class="col-6 header__col">
       <app-filtri></app-filtri>
     </div>
-  </div>
-  <div class="row">
-
-  </div>
+  </header>
+  <main class="row">
+    <section class="container-fluid corpo">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let card of [1,2,3]">
+          <div class="corpo__card">
+            <mat-card>
+              <mat-card-header>
+                  <mat-card-title>Title</mat-card-title>
+                  <mat-card-subtitle>Subtitle</mat-card-subtitle>
+              </mat-card-header>
+              <img matCardImage>
+              <mat-card-content>
+                  Text content
+              </mat-card-content>
+              <mat-card-actions align="start">
+                  <button mat-button>Action1</button>
+                  
+              </mat-card-actions>
+              <mat-card-footer>
+                  Footer
+              </mat-card-footer>
+          </mat-card>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </section>
+  </main>
 </div>

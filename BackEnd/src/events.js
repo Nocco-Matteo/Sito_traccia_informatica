@@ -24,6 +24,9 @@ function createRouter(db)
       }
     );
   });
+
+
+  
   //ritorna il png del logo
   router.get('/logo', function (req, res, next) 
   {
