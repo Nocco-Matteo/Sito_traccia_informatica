@@ -1,0 +1,55 @@
+.corpo__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+  
+    mat-card {
+      width: 80%;
+      max-width: 500px;
+      margin: 20px;
+      box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+      
+      
+      mat-card-content {
+        p {
+          margin-bottom: 10px;
+        }
+      }
+      
+      mat-card-actions {
+        button {
+          background-color: #3f51b5;
+          color: white;
+        }
+      }
+      
+      mat-card-footer {
+        text-align: right;
+        font-size: 12px;
+        color: gray;
+      }
+    }
+
+    .lezioni {
+        display: flex;
+        flex-direction: column;
+        
+        .lezione {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid lightgray;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+          
+          .lezione__field {
+            flex-basis: 25%;
+            text-align: center;
+          }
+        }
+      }
+  }

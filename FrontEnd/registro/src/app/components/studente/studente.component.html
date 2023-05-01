@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <header class="row px-3 header">
-    <div class="col-2 header__col">
-      <mat-card class="h-100 m-0">
+    <div class="col-2">
+      <mat-card class="h-100 m-0 header__card" [ngStyle]="{'background-color': currentCardColor}">
         <mat-card-content>
-          <div class="h-100 d-flex justify-content-between">
+          <div class="h-100 d-flex justify-content-between" >
             <div class="header__image">
               <h1>immagine</h1>
             </div>
@@ -17,8 +17,8 @@
     </div>
 
     <div class="col-1"></div>
-    <div class="col-2 header__col">
-      <mat-card class="h-100">
+    <div class="col-2">
+      <mat-card class="h-100 header__card" [ngStyle]="{'background-color': currentCardColor}">
         <mat-card-content>
           <p>Ore lezioni totali:</p>
           <p>Ore assenze totali:</p>
@@ -28,33 +28,17 @@
 
     <div class="col-1"></div>
     <div class="col-6 header__col">
-      <app-filtri></app-filtri>
+      <app-filtri (periodChanged)="changePeriodEvent($event)"></app-filtri>
     </div>
   </header>
   <main class="row">
     <section class="container-fluid corpo">
-      <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let card of [1,2,3]">
-          <div class="corpo__card">
-            <mat-card>
-              <mat-card-header>
-                  <mat-card-title>Title</mat-card-title>
-                  <mat-card-subtitle>Subtitle</mat-card-subtitle>
-              </mat-card-header>
-              <img matCardImage>
-              <mat-card-content>
-                  Text content
-              </mat-card-content>
-              <mat-card-actions align="start">
-                  <button mat-button>Action1</button>
-                  
-              </mat-card-actions>
-              <mat-card-footer>
-                  Footer
-              </mat-card-footer>
-          </mat-card>
-          </div>
-        </ng-template>
+      <ngb-carousel *ngIf="carteLezioni$ | async as carte">
+        <ng-container *ngFor="let card of carte">
+          <ng-template ngbSlide>
+            <app-carta-lezioni [currentCardColor]="currentCardColor" [carta]="card"></app-carta-lezioni>
+          </ng-template>
+        </ng-container>
       </ngb-carousel>
     </section>
   </main>

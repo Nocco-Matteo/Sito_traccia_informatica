@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DocenteComponent } from './docente.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NavbarModule } from '../navbar/navbar.module';
 
 
 const mainRoutes: Routes = [
@@ -15,7 +16,7 @@ const mainRoutes: Routes = [
   declarations: [DocenteComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(mainRoutes)
+    RouterModule.forChild(mainRoutes),
   ],
   exports:[DocenteComponent]
 })

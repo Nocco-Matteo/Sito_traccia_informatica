@@ -1,5 +1,5 @@
 
-  <mat-card style="width: 100%;">
+  <mat-card style="width: 100%;" [ngStyle]="{'background-color': currentCardColor}">
       <mat-card-content>
         <form [formGroup]="filtri">
           <mat-form-field>
@@ -24,7 +24,7 @@
       
           <mat-form-field>
             <mat-label>Periodo</mat-label>
-            <mat-select formControlName="periodo">
+            <mat-select formControlName="periodo" (selectionChange)="changePeriod()">
               <mat-option *ngFor="let option of filtroPeriodo" [value]="option">
                 {{option}}
               </mat-option>

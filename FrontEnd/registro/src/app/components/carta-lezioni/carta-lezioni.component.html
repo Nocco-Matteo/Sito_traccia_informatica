@@ -1,0 +1,29 @@
+<div class="corpo__card">
+  <mat-card *ngIf="carta" [ngStyle]="{'background-color': currentCardColor}">
+    <mat-card-header>
+      <ng-container *ngIf="isGiornaliera(carta.periodo)">
+        <mat-card-title>{{carta.periodo.data}}, {{carta.periodo.giorno}}</mat-card-title>
+      </ng-container>
+      <ng-container *ngIf="isSettimanale(carta.periodo)">
+        <mat-card-title>{{carta.periodo.inizioSettimana}} - {{carta.periodo.fineSettimana}}</mat-card-title>
+      </ng-container>
+      <ng-container *ngIf="isMensile(carta.periodo)">
+        <mat-card-title>{{carta.periodo.inizioMese}} - {{carta.periodo.fineMese}}</mat-card-title>
+      </ng-container>
+    </mat-card-header>
+    <img matCardImage>
+    <mat-card-content>
+      <div class="lezioni">
+        <div class="lezione" *ngFor="let lezione of carta.lezioni">
+          <div class="lezione__field">{{lezione.orarioInizio}}</div>
+          <div class="lezione__field">{{lezione.materia}}</div>
+          <div class="lezione__field">{{lezione.argomento}}</div>
+          <div class="lezione__field">{{lezione.presenza ? 'Presente' : 'Assente'}}</div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>Action1</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

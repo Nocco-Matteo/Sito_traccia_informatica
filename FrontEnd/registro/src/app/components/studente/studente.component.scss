@@ -17,11 +17,9 @@
 .corpo {
   margin-top: 10px;
   padding: 0;
-  .corpo__card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
+  
+  ngb-carousel{
+    height: calc(100vh - 250px);
   }
 }
 

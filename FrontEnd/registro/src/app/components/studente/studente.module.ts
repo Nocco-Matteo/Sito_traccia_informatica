@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FiltriModule } from "../filtri/filtri.module";
 import { MatCardModule } from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartaLezioniModule } from '../carta-lezioni/carta-lezioni.module';
 
 const mainRoutes: Routes = [
   {
@@ -21,6 +22,7 @@ const mainRoutes: Routes = [
         RouterModule.forChild(mainRoutes),
         FiltriModule,
         MatCardModule,
+        CartaLezioniModule,
         NgbModule
     ]
 })
